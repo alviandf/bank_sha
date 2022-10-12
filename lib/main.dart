@@ -4,6 +4,7 @@ import 'package:bank_sha/ui/pages/sign_up_set_profile_page.dart';
 import 'package:bank_sha/ui/pages/sign_up_success_page.dart';
 import 'package:flutter/material.dart';
 
+import 'ui/pages/home_page.dart';
 import 'ui/pages/onboarding_page.dart';
 import 'ui/pages/sign_in_page.dart';
 import 'ui/pages/sign_up_page.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/sign-up-set-profile': (context) => const SignUpSetProfilePage(),
         '/sign-up-set-ktp': (context) => const SignUpSetKtpPage(),
         '/sign-up-success': (context) => const SignUpSuccessPage(),
+        '/home': (context) => const HomePage(),
       },
     );
   }
