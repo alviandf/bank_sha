@@ -72,6 +72,75 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      body: ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 24,
+        ),
+        children: [
+          buildProfile(),
+        ],
+      ),
+    );
+  }
+
+  Widget buildProfile() {
+    return Container(
+      margin: const EdgeInsets.only(top: 40),
+      child: Row(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Howdy,',
+                style: blackTextStyle.copyWith(
+                  fontSize: 16,
+                ),
+              ),
+              SizedBox(
+                height: 2,
+              ),
+              Text(
+                'shaynahan',
+                style: blackTextStyle.copyWith(
+                  fontSize: 20,
+                  fontWeight: semiBold,
+                ),
+              ),
+            ],
+          ),
+          const Spacer(),
+          Container(
+            width: 60,
+            height: 60,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/img_profile.png'),
+                fit: BoxFit.cover,
+              ),
+              shape: BoxShape.circle,
+            ),
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                width: 16,
+                height: 16,
+                decoration: BoxDecoration(
+                  color: whiteColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.check_circle,
+                    color: greenColor,
+                    size: 14,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
