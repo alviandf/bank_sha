@@ -4,8 +4,16 @@ import '../../shared/theme.dart';
 import '../widgets/buttons.dart';
 import '../widgets/forms.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class SignUpSetProfilePage extends StatefulWidget {
+
+  const SignUpSetProfilePage({Key? key}) : super(key: key);
+
+  @override
+  State<SignUpSetProfilePage> createState() => _SignUpSetProfilePageState();
+}
+
+class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
+  String? imgProfile;
 
   @override
   Widget build(BuildContext context) {
@@ -44,23 +52,49 @@ class SignUpPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                // NOTE: EMAIL INPUT
-                const CustomFormField(
-                  title: 'Full Name',
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      imgProfile = 'assets/img_profile.png';
+                    });
+                  },
+                  child: Container(
+                    width: 120,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      color: lightBackgroundColor,
+                      shape: BoxShape.circle,
+                      image: imgProfile != null
+                          ? DecorationImage(
+                              image: AssetImage(imgProfile!),
+                              fit: BoxFit.cover,
+                            )
+                          : null,
+                    ),
+                    child: imgProfile == null ? Center(
+                      child: Image.asset(
+                        'assets/ic_upload.png',
+                        width: 32,
+                        height: 32,
+                      ),
+                    ) : null,
+                  ),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                // NOTE: PASSWORD INPUT
-                const CustomFormField(
-                  title: 'Email Address',
+                Text(
+                  'Shayna Hanna',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
+                  ),
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 30,
                 ),
-                // NOTE: PASSWORD INPUT
                 const CustomFormField(
-                  title: 'Password',
+                  title: 'Set PIN (6 digit number)',
                   obscureText: true,
                 ),
                 const SizedBox(
@@ -69,23 +103,11 @@ class SignUpPage extends StatelessWidget {
                 CustomFilledButton(
                   title: 'Continue',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/sign-up-set-profile');
+                    Navigator.pushNamed(context, '/sign-up-set-ktp');
                   },
                 ),
               ],
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          CustomTextWidget(
-            title: 'Sign In',
-            onPressed: () {
-              Navigator.pushNamed(context, '/sign-in');
-            },
-          ),
-          const SizedBox(
-            height: 50,
           ),
         ],
       ),
