@@ -103,8 +103,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ? Column(children: [
                           CustomFilledButton(
                             title: 'Get Started',
-                            onPressed: () {
-                            },
+                            onPressed: () {},
                           ),
                           const SizedBox(
                             height: 20,
@@ -175,27 +174,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               ),
                             ),
                             const Spacer(),
-                            SizedBox(
+                            CustomFilledButton(
+                              title: 'Continue',
+                              onPressed: () {
+                                carouselController.nextPage();
+                              },
                               width: 150,
                               height: 50,
-                              child: TextButton(
-                                onPressed: () {
-                                  carouselController.nextPage();
-                                },
-                                style: TextButton.styleFrom(
-                                  backgroundColor: purpleColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                ),
-                                child: Text(
-                                  'Continue',
-                                  style: whiteTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: medium,
-                                  ),
-                                ),
-                              ),
                             ),
                           ],
                         ),

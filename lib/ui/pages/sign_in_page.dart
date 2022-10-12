@@ -1,4 +1,6 @@
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/widgets/buttons.dart';
+import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
@@ -42,58 +44,16 @@ class SignInPage extends StatelessWidget {
               child: Column(
                 children: [
                   // NOTE: EMAIL INPUT
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Email Address',
-                        style: blackTextStyle.copyWith(
-                          fontWeight: medium,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      TextFormField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                          contentPadding: EdgeInsets.all(12),
-                        ),
-                      ),
-                    ],
+                  const CustomFormField(
+                    title: 'Email Address',
                   ),
                   const SizedBox(
                     height: 16,
                   ),
                   // NOTE: PASSWORD INPUT
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Password',
-                        style: blackTextStyle.copyWith(
-                          fontWeight: medium,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      TextFormField(
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                          contentPadding: EdgeInsets.all(12),
-                        ),
-                      ),
-                    ],
+                  const CustomFormField(
+                    title: 'Password',
+                    obscureText: true,
                   ),
                   const SizedBox(
                     height: 30,
@@ -105,27 +65,9 @@ class SignInPage extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 50,
-                    child: TextButton(
-                      onPressed: () {
-                        // carouselController.nextPage();
-                      },
-                      style: TextButton.styleFrom(
-                        backgroundColor: purpleColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      child: Text(
-                        'Sign In',
-                        style: whiteTextStyle.copyWith(
-                          fontSize: 16,
-                          fontWeight: medium,
-                        ),
-                      ),
-                    ),
+                  CustomFilledButton(
+                    title: ' Sign In',
+                    onPressed: () {},
                   ),
                 ],
               ),
@@ -133,28 +75,16 @@ class SignInPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            SizedBox(
-              width: double.infinity,
-              height: 24,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SignInPage(),
-                    ),
-                  );
-                },
-                style: TextButton.styleFrom(
-                  padding: EdgeInsets.zero,
-                ),
-                child: Text(
-                  'Create New Account',
-                  style: greyTextStyle.copyWith(
-                    fontSize: 16,
+            CustomTextWidget(
+              title: 'Create New Account',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignInPage(),
                   ),
-                ),
-              ),
+                );
+              },
             ),
           ],
         ));
