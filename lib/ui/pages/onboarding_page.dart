@@ -1,4 +1,3 @@
-import 'package:bank_sha/ui/pages/sign_in_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -103,7 +102,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ? Column(children: [
                           CustomFilledButton(
                             title: 'Get Started',
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/sign-in');
+                            },
                           ),
                           const SizedBox(
                             height: 20,
