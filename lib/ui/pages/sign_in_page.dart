@@ -78,12 +78,6 @@ class SignInPage extends StatelessWidget {
             CustomTextWidget(
               title: 'Create New Account',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SignInPage(),
-                  ),
-                );
               },
             ),
           ],

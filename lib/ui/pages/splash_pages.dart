@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:bank_sha/ui/pages/onboarding_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/theme.dart';
@@ -17,10 +16,15 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(const Duration(seconds: 2), () {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const OnboardingPage()));
-    });
+    Timer(
+      const Duration(seconds: 2),
+      () {
+        Navigator.pushNamed(
+          context,
+          '/onboarding',
+        );
+      },
+    );
   }
 
   @override
