@@ -1,3 +1,4 @@
+import 'package:bank_sha/ui/pages/onboarding_page.dart';
 import 'package:bank_sha/ui/pages/sign_in_page.dart';
 import 'package:bank_sha/ui/pages/splash_pages.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignInPage(),
+      home: OnboardingPage(),
     );
   }
 }

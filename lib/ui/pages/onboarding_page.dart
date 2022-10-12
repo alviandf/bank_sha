@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/theme.dart';
+import '../widgets/buttons.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({Key? key}) : super(key: key);
@@ -100,27 +101,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ),
                   currentIndex == 2
                       ? Column(children: [
-                          SizedBox(
-                            width: double.infinity,
-                            height: 50,
-                            child: TextButton(
-                              onPressed: () {
-                                carouselController.nextPage();
-                              },
-                              style: TextButton.styleFrom(
-                                backgroundColor: purpleColor,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                              ),
-                              child: Text(
-                                'Get Started',
-                                style: whiteTextStyle.copyWith(
-                                  fontSize: 16,
-                                  fontWeight: medium,
-                                ),
-                              ),
-                            ),
+                          CustomFilledButton(
+                            title: 'Get Started',
+                            onPressed: () {
+                            },
                           ),
                           const SizedBox(
                             height: 20,
